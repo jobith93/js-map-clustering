@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Map Marker</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+
+    <section class="section">
+        <div class="container">
+
+          <h1 class="title">Select Data</h1>
+          <h2 class="subtitle">
+            upload an csv with location data. 
+              <a class="button is-text" download href="data/map-data-mangalore.csv">
+                <span class="icon">
+                  <i class="fa fa-download"></i>
+                </span>
+                <span>Sample Data</span>
+              </a>
+          </h2>
+
+          <div class="columns">
+
+            <div class="column">
+              <div class="field">
+                <div class="file has-name">
+                  <label class="file-label">
+                    <input class="file-input" type="file" name="csv-file" id="csv-file" onchange="upload(event)" accept=".csv">
+                    <span class="file-cta">
+                      <span class="file-icon">
+                        <i class="fa fa-upload"></i>
+                      </span>
+                      <span class="file-label">
+                        CSV File
+                      </span>
+                    </span>
+                    <span class="file-name" id="file-name">
+                      select a csv file
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+                <div class="notification" id="notification">
+                  Please select a CSV file, to process the map clustering.
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div id="map"></div>
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMJYhPFMLNIloMd2_9tiKA9QOuwYojz78" async defer></script>
+    <script src="./lib/jquery.csv.min.js"></script>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
